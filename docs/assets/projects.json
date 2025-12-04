@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "First Computer Build",
+    "image": "../assets/first-computer.jpg",
+    "imageAlt": "Young me in front of first computer post",
+    "description": "Here is where it all started! This is my first build when I was 11 years old in 2014.",
+    "links": []
+  },
+  {
+    "id": 2,
+    "title": "Current Computer Build",
+    "image": "../assets/current-computer.jpg",
+    "imageAlt": "Me proudly posing in front of first post of new system",
+    "description": "I previously built this computer in 2018, but here I am giving it a much needed upgrade! Inside, it packs a Ryzen 5 9600x, 32gb of DDR5 ram, and a 2tb NVME drive!",
+    "links": []
+  },
+  {
+    "id": 3,
+    "title": "Plex Media Server Build",
+    "image": "../assets/server.jpg",
+    "imageAlt": "Me standing in front of a computer",
+    "description": "My mom wanted something better than her laptop to store and steam movies, so I used some spare parts to build her a server.",
+    "links": []
+  },
+  {
+    "id": 4,
+    "title": "Motorized Bicycle Build",
+    "image": "../assets/bike.jpg",
+    "imageAlt": "A bicycle with an engine kit installed",
+    "description": "Aside from computers, I also enjoy some mechanical work. This bike could get up to 40mph! I built this during the Covid lockdowns in 2020.",
+    "links": []
+  },
+  {
+    "id": 5,
+    "title": "JavaScript Game",
+    "image": "../assets/game-thumb.jpg",
+    "imageAlt": "Young me in front of first computer post",
+    "description": "A game I made for a school project to test reaction time!",
+    "links": [
+      {
+        "text": "Play Game",
+        "url": "https://gunnar-schmidtt.github.io/project-bravo/"
+      },
+      {
+        "text": "Source Code",
+        "url": "https://github.com/Gunnar-Schmidtt/project-bravo"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Code Academy Profile",
+    "image": "../assets/code-academy.jpg",
+    "imageAlt": "Code Academy Profile Screenshot",
+    "description": "My profile on Code Academy showcasing my completed courses and skills.",
+    "links": []
+  },
+  {
+    "id": 7,
+    "title": "Project-Charlie",
+    "image": "../assets/project-charlie.jpg",
+    "imageAlt": "Project Charlie Screenshot",
+    "description": "A collection of games created by our class imported using a fetch API.",
+    "links": [
+      {
+        "text": "View Project",
+        "url": "hhttps://gunnar-schmidtt.github.io/charlie/"
+      },
+      {
+        "text": "Source Code",
+        "url": "https://github.com/Gunnar-Schmidtt/charlie"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Project-Delta",
+    "image": "../assets/project-delta.jpg",
+    "imageAlt": "Project Delta Screenshot",
+    "description": "An improved version of a timer app so as to reduce the amount of input needed from the user to set a time.",
+    "links": [
+      {
+        "text": "View Project",
+        "url": "https://gunnar-schmidtt.github.io/projectDelta/"
+      },
+      {
+        "text": "Source Code",
+        "url": "https://github.com/Gunnar-Schmidtt/projectDelta"
+      }
+    ]
+  }
+]
