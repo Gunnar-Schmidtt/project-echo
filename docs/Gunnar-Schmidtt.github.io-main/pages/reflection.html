@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reflection — Infrastructure & Architecture</title>
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <!-- Load zero-md early so the custom element is defined before parsing the element -->
+  <script src="https://unpkg.com/zero-md@latest/zero-md.min.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Reflection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="reflection.html">Reflection</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div class="p-4 bg-light rounded-3">
+      <h1 class="display-6">Reflection — Infrastructure & Architecture</h1>
+      <p class="lead">This page renders a markdown reflection using <a href="https://zerodevx.github.io/zero-md/" target="_blank">zero-md</a>. If zero-md fails to render the markdown, a client-side fallback will render it using `marked`.</p>
+
+      <!-- zero-md will fetch and render the markdown file. We also include a visible fallback container. -->
+      <div id="reflection-container">
+        <zero-md id="zero-md-reflection" src="../assets/REFLECTION.md"></zero-md>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container d-flex justify-content-center gap-3">
+      <a href="https://github.com/Gunnar-Schmidtt/Gunnar-Schmidtt" target="_blank" class="text-white">My Repo</a>
+      <a href="https://gunnar-schmidtt.github.io/" class="text-white" target="_blank">Live Site</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/scripts.js"></script>
+  <!-- marked.js for fallback rendering of markdown if zero-md doesn't work -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    // Fallback: if zero-md element doesn't render (e.g., blocked CDN or path issues),
+    // fetch the markdown and render using marked.js into the container.
+    (function() {
+      const zm = document.getElementById('zero-md-reflection');
+      // Wait a short time for zero-md to render
+      setTimeout(() => {
+        let rendered = false;
+        try {
+          // zero-md renders into its shadowRoot; check if it has content
+          if (zm && zm.shadowRoot && zm.shadowRoot.innerHTML.trim().length > 0) {
+            rendered = true;
+          }
+        } catch (e) {
+          rendered = false;
+        }
+
+        if (!rendered) {
+          // Fallback: fetch markdown and render as HTML using marked
+          fetch('../assets/REFLECTION.md')
+            .then(r => {
+              if (!r.ok) throw new Error('Failed to fetch markdown');
+              return r.text();
+            })
+            .then(md => {
+              const container = document.getElementById('reflection-container');
+              container.innerHTML = marked.parse(md);
+            })
+            .catch(err => {
+              const container = document.getElementById('reflection-container');
+              container.innerHTML = '<pre>Unable to load reflection content (see console)</pre>';
+              console.error('Reflection fallback error:', err);
+            });
+        }
+      }, 500);
+    })();
+  </script>
+</body>
+
+</html>

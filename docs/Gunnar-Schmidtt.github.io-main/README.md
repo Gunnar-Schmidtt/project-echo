@@ -1,30 +1,39 @@
-ReadMe for my live site.
+Gunnar Schmidtt — Web Portfolio
 
-Page Map:
-index.html (Home)
-├─ pages/blog.html (Blog)
-├─ pages/projects.html (Projects)
-└─ pages/resources.html (Resources)
+A compact developer profile and static web portfolio. This repository contains the source for the GitHub Pages site and simple client-side app used to display projects, blog posts, resources, and a short reflection about the project's architecture.
 
-Wireframe:
-assets/wireframe.jpg
+Live site
+- https://gunnar-schmidtt.github.io/project-echo/
 
-How to view:
-https://gunnar-schmidtt.github.io/
+Site map
+- Home: `index.html`
+- Blog: `pages/blog.html`
+- Projects: `pages/projects.html` (project cards loaded from `assets/projects.json`)
+- Reflection: `pages/reflection.html` (renders `assets/REFLECTION.md`)
+- Resources: `pages/resources.html`
 
-Code Snippet:
-```
-btn.addEventListener("click", function() {
-    msg.style.display = "block";
-    console.log("Hello message shown!");
-    setTimeout(() => {
-      msg.style.display = "none";
-    }, 2000);
-  });
-```
-Explanation: Some javascript that allows me to add a button to my index.html page that tells the user hello when they click it.
+Key skills
+- HTML5, semantic markup
+- CSS (Bootstrap 5, responsive layouts)
+- JavaScript (DOM, fetch API, client-side rendering)
+- Markdown rendering (`zero-md`) and static site workflows
+- Git / GitHub (Pages deployment)
 
-Credit/disclosure- All the code here came from three sources:
-W3 Schools
-GetBootstrap
-ChatGPT (Mostly advice)
+Tech stack & tools
+- Hosting: GitHub Pages
+- UI: Bootstrap 5 (CDN)
+- JS: Vanilla ES6+ (single `scripts/scripts.js`)
+- Data: Local JSON (`assets/projects.json`) loaded with `fetch`
+- Docs: Markdown rendered client-side via `zero-md` (fallback: `marked.js`)
+- Local testing: `python -m http.server` or VS Code Live Server
+
+Notes
+- The site uses client-side `fetch` to load `assets/projects.json`. Browsers block these requests from `file://` URLs — you must serve the files over HTTP to test fetching.
+- The Reflection page uses `zero-md` to render Markdown in the browser; a `marked.js` fallback is included if zero-md cannot render.
+
+Contributing
+- Edit content or add projects by updating files under `pages/` or `assets/`.
+- To add a project, append an object to `assets/projects.json` with `title`, `image`, `imageAlt`, `description`, and optional `links`.
+
+Credits
+- Bootstrap, Normalize.css, MDN, project thumbnails and assets.

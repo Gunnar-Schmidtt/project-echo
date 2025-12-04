@@ -55,5 +55,39 @@
     "imageAlt": "Code Academy Profile Screenshot",
     "description": "My profile on Code Academy showcasing my completed courses and skills.",
     "links": []
+  },
+  {
+    "id": 7,
+    "title": "Project-Charlie",
+    "image": "../assets/project-charlie.jpg",
+    "imageAlt": "Project Charlie Screenshot",
+    "description": "A collection of games created by our class imported using a fetch API.",
+    "links": [
+      {
+        "text": "View Project",
+        "url": "hhttps://gunnar-schmidtt.github.io/charlie/"
+      },
+      {
+        "text": "Source Code",
+        "url": "https://github.com/Gunnar-Schmidtt/charlie"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Project-Delta",
+    "image": "../assets/project-delta.jpg",
+    "imageAlt": "Project Delta Screenshot",
+    "description": "An improved version of a timer app so as to reduce the amount of input needed from the user to set a time.",
+    "links": [
+      {
+        "text": "View Project",
+        "url": "https://gunnar-schmidtt.github.io/projectDelta/"
+      },
+      {
+        "text": "Source Code",
+        "url": "https://github.com/Gunnar-Schmidtt/projectDelta"
+      }
+    ]
   }
 ]
